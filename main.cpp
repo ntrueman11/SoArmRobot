@@ -1,4 +1,4 @@
-#include <librealsense2/rs.hpp> // This line will no longer have an error
+#include <librealsense2/rs.hpp> 
 #include <iostream>
 #include <iomanip>
 #include <chrono>
@@ -10,7 +10,7 @@ int main() try {
     cfg.enable_stream(RS2_STREAM_DEPTH, 640, 480, RS2_FORMAT_Z16, 30);
     pipe.start(cfg);
 
-    for (int i = 0; i < 10; ++i) pipe.wait_for_frames(); // Warm-up
+    for (int i = 0; i < 10; ++i) pipe.wait_for_frames(); 
 
     std::cout << "--- Camera Started ---" << std::endl;
     std::cout << std::fixed << std::setprecision(3);
