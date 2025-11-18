@@ -1,13 +1,20 @@
 cmake_minimum_required(VERSION 3.15)
 project(SoArmRobot CXX)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
+
+find_package(OpenCV REQUIRED)
 
 include_directories("C:/Users/Nathan/Documents/RealSense SDK 2.0/include")
 
-add_executable(SoArmRobot main.cpp)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+add_executable(SoArmRobot main.cpp
+        Camera.cpp
+        Camera.h)
 
 target_link_libraries(SoArmRobot PRIVATE
         "C:/Users/Nathan/Documents/RealSense SDK 2.0/lib/x64/realsense2.lib"
+        ${OpenCV_LIBS}
 )
 
 set(RS_BIN "C:/Users/Nathan/Documents/RealSense SDK 2.0/bin/x64")
