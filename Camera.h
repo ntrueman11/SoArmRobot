@@ -1,4 +1,3 @@
-// Camera.h
 #ifndef SOARMROBOT_OBJECTDETECTION_H
 #define SOARMROBOT_OBJECTDETECTION_H
 
@@ -50,7 +49,7 @@ private:
      * @param mask_out Bianry mask
      * @return A list of bounding boxes for the found objects.
      */
-    std::vector<cv::Rect> findObjects(rs2::depth_frame& depth_frame, cv::Mat& mask_out);
+    std::vector<cv::Rect> findObjects(rs2::depth_frame& depth_frame, const cv::Mat& color_mat, cv::Mat& mask_out);
 
     rs2::colorizer color_map; // For visualizing depth
     bool running;             // quit flag

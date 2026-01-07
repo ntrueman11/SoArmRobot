@@ -34,10 +34,6 @@ int main() try {
 
         camera.processFrames(color_frame, depth_frame);
 
-        //temp
-        double dist_m = depth_frame.get_distance(320, 240);
-        std::cout << "\rCenter distance: " << dist_m << " m    ";
-
     }
 
     return 0;
